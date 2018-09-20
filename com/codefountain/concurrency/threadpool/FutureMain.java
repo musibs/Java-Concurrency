@@ -19,7 +19,7 @@ public class FutureMain {
 		
 		ExecutorService executorService = null;
 		try {
-			executorService = Executors.newFixedThreadPool(1); 
+			executorService = Executors.newSingleThreadExecutor(); 
 			Future<Integer> future = executorService.submit(new FutureDemo());
 			if(!future.isDone()) {
 				System.out.println("|INFO| Task is still in progress.");
