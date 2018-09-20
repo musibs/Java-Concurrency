@@ -2,6 +2,12 @@ package com.codefountain.concurrency.threadpool;
 
 import java.util.concurrent.Executor;
 
+/**
+ * An implementation of {@link Executor}
+ * 
+ * @author Somnath Musib
+ *
+ */
 public class ExecutorMain {
 
 	public static void main(String[] args) {
