@@ -14,7 +14,7 @@ public class CachedThreadPoolWithCustomThreadFactory {
 	private static final int NO_OF_JOBS = 200;
 	
 	/**
-	 * High number of short lived jobs
+	 * Custom thread pool name
 	 */
 	private static final String CUSTOM_CACHED_POOL = "CustomCachedThreadPool";
 	
@@ -30,6 +30,5 @@ public class CachedThreadPoolWithCustomThreadFactory {
 		finally {
 			executorService.shutdown();
 		}
-		
 	}
 }
