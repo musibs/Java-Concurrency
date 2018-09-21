@@ -20,7 +20,6 @@ public class CachedThreadPoolWithCustomThreadFactory {
 	
 	public static void main(String[] args) {
 		
-		
 		ExecutorService executorService = null;
 		try {
 			executorService = Executors.newCachedThreadPool(new AppThreadFactory(CUSTOM_CACHED_POOL));
