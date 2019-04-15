@@ -1,4 +1,4 @@
-package com.deofountain.concurrency.demo;
+package com.codefountain.concurrency.demo;
 
 import java.util.Arrays;
 import java.util.Collection;
