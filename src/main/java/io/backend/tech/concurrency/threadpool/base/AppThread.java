@@ -8,7 +8,7 @@ package io.backend.tech.concurrency.threadpool.base;
  * @author Somnath Musib
  *
  */
-public class AppThread extends Thread{
+public class AppThread extends Thread {
 
 	private static final String POOL_DELIMITER = "-"; 
 	
@@ -21,6 +21,6 @@ public class AppThread extends Thread{
 	 * @param id, Identifier for the thread
 	 */
 	public AppThread(ThreadGroup group, Runnable runnable, String pool, int id) {
-		super(group, runnable, String.format("%s%s%d",pool, POOL_DELIMITER, id));
+		super(group, runnable, String.format("%s%s%d", pool+"-thread", POOL_DELIMITER, id));
 	}
 }

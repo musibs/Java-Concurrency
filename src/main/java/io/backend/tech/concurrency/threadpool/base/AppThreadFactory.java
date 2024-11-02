@@ -20,20 +20,19 @@ public class AppThreadFactory implements ThreadFactory{
 	
 	public AppThreadFactory(String poolName) {
 		this.poolName = poolName;
-		SecurityManager s = System.getSecurityManager();
-		group = Objects.nonNull(s) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();
+		group = Thread.currentThread().getThreadGroup();
 	}
 	
 	@Override
 	public Thread newThread(Runnable runnable) {
-		Thread t = new AppThread(group, runnable, poolName, atomicInteger.incrementAndGet());
-		if(t.isDaemon()) {
-			t.setDaemon(false);
+		Thread appThread = new AppThread(group, runnable, poolName, atomicInteger.incrementAndGet());
+		if(appThread.isDaemon()) {
+			appThread.setDaemon(false);
 		}
-		if(t.getPriority() != Thread.NORM_PRIORITY) {
-			t.setPriority(Thread.NORM_PRIORITY);
+		if(appThread.getPriority() != Thread.NORM_PRIORITY) {
+			appThread.setPriority(Thread.NORM_PRIORITY);
 		}
-		return t;
+		return appThread;
 	}
 
 }

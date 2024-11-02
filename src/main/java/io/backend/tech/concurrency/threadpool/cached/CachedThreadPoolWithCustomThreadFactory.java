@@ -1,15 +1,15 @@
 package io.backend.tech.concurrency.threadpool.cached;
 
+import io.backend.tech.concurrency.threadpool.base.AppThreadFactory;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import com.codefountain.concurrency.threadpool.base.AppThreadFactory;
-import com.codefountain.concurrency.threadpool.cached.CachedThreadPoolMain.CallableTask;
 
 public class CachedThreadPoolWithCustomThreadFactory {
 
 	/**
-	 * High number of short lived jobs
+	 * High number of short-lived jobs
 	 */
 	private static final int NO_OF_JOBS = 200;
 	
@@ -24,7 +24,7 @@ public class CachedThreadPoolWithCustomThreadFactory {
 		try {
 			executorService = Executors.newCachedThreadPool(new AppThreadFactory(CUSTOM_CACHED_POOL));
 			for(int i=0; i<NO_OF_JOBS; i++) {
-				executorService.submit(new CallableTask(i));
+				executorService.submit(new CachedThreadPoolMain.CallableTask(i));
 			}
 		}
 		finally {
