@@ -1,10 +1,5 @@
 # Java-Concurrency
-Java Concurrency source code for Medium blog
+Source code for the Java Concurrency Medium article series.
 
-This repository contains code on below tpoics:
-
-1. Thread Creation
-2. Synchronization
-3. Thread pool and Executor Service
-4. Future
+[Mastering Java Concurrency: Core Concepts and Essentials] (https://medium.com/thebackendtech/mastering-java-concurrency-core-concepts-and-essentials-6e5291cd324a)
 
